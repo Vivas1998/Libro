@@ -22,7 +22,6 @@ public class Libro {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginasLibro;
-        detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas);
     }
     
     // Devuelve el autor del libro
@@ -52,11 +51,12 @@ public class Libro {
     
     // Imprimir detalles
     public void imprimirDetalles() {
+        detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas);
         System.out.println(detalles);
     }
     
     // Devuelve los detalles
     public String getDetalles() {
-        return detalles;
+        return this.detalles;
     }
 }
