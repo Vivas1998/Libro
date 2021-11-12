@@ -59,12 +59,12 @@ public class Libro {
     // Devuelve los detalles
     public String getDetalles() {
         String segundoNumeroReferencia = "ZZZ";
-        String detalles = "";
+        String detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Numero de Referencia: ");
         if (numeroReferencia != "") {
-            detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas +", Numero de Referencia: " + numeroReferencia); 
+            detalles =  detalles + (numeroReferencia); 
         }
         else {
-            detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas +", Numero de Referencia: " + segundoNumeroReferencia);
+            detalles = detalles + (segundoNumeroReferencia);
         }
         return detalles;
     }
