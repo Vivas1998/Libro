@@ -15,16 +15,18 @@ public class Libro {
     private int numeroPaginas;
     private String numeroReferencia;
     private int vecesPrestado;
+    private boolean esLibroDeTexto;
     
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int paginasLibro) {
+    public Libro(String autorLibro, String tituloLibro, int paginasLibro, boolean libroDeTexto) {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = paginasLibro;
         numeroReferencia = "";
         vecesPrestado = 0;
+        esLibroDeTexto = libroDeTexto;
     }
     
     // Devuelve el autor del libro
@@ -60,8 +62,9 @@ public class Libro {
     
     // Devuelve los detalles
     public String getDetalles() {
+        String detallesLibroTexto = getLibroDeTexto();
         String segundoNumeroReferencia = "ZZZ";
-        String detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Veces Prestado: " + vecesPrestado + ", Numero de Referencia: ");
+        String detalles = ("Titulo: " + titulo + ", Autor: " + autor + ", Paginas: " + numeroPaginas + ", Veces Prestado: " + vecesPrestado + ", Libro de texto: " + detallesLibroTexto + ", Numero de Referencia: ");
         if (numeroReferencia != "") {
             detalles =  detalles + (numeroReferencia); 
         }
@@ -94,5 +97,16 @@ public class Libro {
     //Devuelve las veces que se ha prestado el libro
     public int getPrestar() {
         return vecesPrestado;
+    }
+    
+    public String getLibroDeTexto() {
+        String detallesLibroDeTexto;
+        if (esLibroDeTexto == true) {
+            detallesLibroDeTexto = "Si es un libro de texto";
+        }
+        else {
+            detallesLibroDeTexto = "No es un libro de texto";
+        }
+        return detallesLibroDeTexto;
     }
 }
